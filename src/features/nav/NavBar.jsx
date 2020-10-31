@@ -21,6 +21,7 @@ export default function NavBar({setFormOpen}) {
                     Re-vents
                 </Menu.Item>
                 <Menu.Item as={NavLink} to='/events' name='events' />
+                <Menu.Item as={NavLink} to='/sandbox' name='Sandbox' />
                 {authenticated && 
                 <Menu.Item as={NavLink} to='/createEvent'>
                     <Button positive inverted content='Create Event' />
