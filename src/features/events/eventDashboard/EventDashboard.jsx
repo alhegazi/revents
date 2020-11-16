@@ -3,14 +3,17 @@ import { Grid } from 'semantic-ui-react';
 import EventList from './EventList';
 //import { sampleData } from '../../../app/api/sampleData';
 import { useSelector } from 'react-redux';
+//import LoadingComponent from '../../../app/layout/LoadingComponent';
+import EventListItemPlaceholder from './EventListItemPlaceholder';
+import EventFilters from './EventFilters';
 
 export default function EventDashboard() {
-    
-    const { events } = useSelector(state => state.event)
+  const { events } = useSelector((state) => state.event);
+  const { loading } = useSelector((state) => state.async);
 
-    //const [events, setEvents] = useState(sampleData);
+  //const [events, setEvents] = useState(sampleData);
 
-    /*function handleCreateEvent(event) {
+  /*function handleCreateEvent(event) {
         setEvents([...events, event]);
     }
 
@@ -19,19 +22,26 @@ export default function EventDashboard() {
         selectEvent(null);
     }*/
 
-    /*function handleDeleteEvent(eventId){
+  /*function handleDeleteEvent(eventId){
        // setEvents(events.filter(evt => evt.id !== eventId));
     }*/
 
-    
-    return (
-        <Grid>
-            <Grid.Column width={10}>
-                <EventList events={events} />
-            </Grid.Column>
-            <Grid.Column width={6}>
-                <h2>Event Filters</h2>
-            </Grid.Column>
-        </Grid>
-    )
+  //if (loading) return <LoadingComponent />;
+
+  return (
+    <Grid>
+      <Grid.Column width={10}>
+        {loading && (
+          <>
+            <EventListItemPlaceholder />
+            <EventListItemPlaceholder />
+          </>
+        )}
+        <EventList events={events} />
+      </Grid.Column>
+      <Grid.Column width={6}>
+        <EventFilters />
+      </Grid.Column>
+    </Grid>
+  );
 }
