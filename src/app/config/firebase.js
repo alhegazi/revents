@@ -5,13 +5,13 @@ import 'firebase/auth';
 import 'firebase/storage';
 
 const firebaseConfig = {
-  apiKey: 'api key',
-  authDomain: 'reventscourse-30301.firebaseapp.com',
-  databaseURL: 'https://reventscourse-30301.firebaseio.com',
-  projectId: 'reventscourse-30301',
-  storageBucket: 'reventscourse-30301.appspot.com',
-  messagingSenderId: '890148191498',
-  appId: '1:890148191498:web:068f2ef498188c46670ef3',
+  apiKey: 'apiKey',
+  authDomain: 'authDomain',
+  databaseURL: 'databaseURL',
+  projectId: 'projectId',
+  storageBucket: 'storageBucket',
+  messagingSenderId: 'messagingSenderId',
+  appId: 'appId',
 };
 
 firebase.initializeApp(firebaseConfig);
